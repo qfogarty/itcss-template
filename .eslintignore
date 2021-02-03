@@ -1,0 +1,12 @@
+.bundle/
+.catch/
+
+data/
+docs/
+vendor/
+
+.next/
+next.config.js
+
+.storybook/
+*.stories.js

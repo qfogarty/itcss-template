@@ -1,0 +1,12 @@
+// -------------------------------------
+// Retrieve color from $root-colors
+// (settings/_colours.scss)
+// -------------------------------------
+
+@function color($color-name, $color-variant: default) {
+    @if ($color-variant != null) {
+        @return map-get(map-get($root-colors, $color-name), $color-variant);
+    } @else {
+        @return map-get($root-colors, $color-name);
+    }
+}

@@ -1,0 +1,13 @@
+::selection {
+    background: $color--burnt-orange;
+    background: rgba($color--burnt-orange, 0.3);
+}
+
+::selection {
+    background: $color--burnt-orange;
+    background: rgba($color--burnt-orange, 0.3);
+}
+
+* {
+    -webkit-tap-highlight-color: rgba($color--burnt-orange, 0.2);
+}

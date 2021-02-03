@@ -1,0 +1,9 @@
+{
+    "plugins": [
+        { "removeViewBox": false },
+        { "removeDimensions": true },
+        { "removeRasterImages": false },
+        { "multipass": true },
+        { "inlineStyles": false }
+    ]
+}

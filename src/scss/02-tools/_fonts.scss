@@ -1,0 +1,50 @@
+@mixin define-font(
+    $font-name,
+    $font,
+    $weight: normal,
+    $style: normal,
+    $display: auto
+) {
+    @font-face {
+        font-family: $font-name;
+        font-weight: $weight;
+        font-style: $style;
+        font-display: $display;
+        font-stretch: normal;
+        src: url($ENV-PATH-FONT + '#{$font}.woff2') format('woff2'),
+            url($ENV-PATH-FONT + '#{$font}.woff') format('woff'),
+            url($ENV-PATH-FONT + '#{$font}.otf') format('opentype'),
+            url($ENV-PATH-FONT + '#{$font}.ttf') format('truetype');
+    }
+}
+
+@mixin font-set(
+    $fontsize: 1em,
+    $lineheight: normal,
+    $letterspacing: normal,
+    $fontweight: normal,
+    $fontfam: false,
+    $fontstyle: normal
+) {
+    font-size: $fontsize * 1px;
+
+    @if $lineheight {
+        line-height: $lineheight * 1px;
+    }
+
+    @if $letterspacing {
+        letter-spacing: $letterspacing * 1px;
+    }
+
+    @if $fontweight {
+        font-weight: $fontweight;
+    }
+
+    @if $fontfam {
+        font-family: $fontfam;
+    }
+
+    @if $fontstyle {
+        font-style: $fontstyle;
+    }
+}

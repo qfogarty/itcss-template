@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #COLOR-VARIABLES
+   ========================================================================== */
+
+$color--grey--90: #e5e5e5;
+$color--slate-grey: #484C50l;
+$color--white: #ffffff;
+$color--black: #000000;
+$color--vitalised-orange: #ff7500;
+$color--burnt-orange: #f04f24;
+$gradient--orange: linear-gradient(
+                180deg,
+                $color--vitalised-orange 0%,
+                $color--burnt-orange 100%
+);
+
+$color-body: $color--black;
+
+$root-colors: (
+        'primary': (
+                'default': $color--burnt-orange
+        ),
+        'secondary': (
+                'default': $color--vitalised-orange
+        ),
+        'tertiary': (
+                'default': $color--vitalised-orange
+        ),
+        'orange': (
+                'default': $color--burnt-orange,
+                'burnt': $color--burnt-orange,
+                'vitalised': $color--vitalised-orange
+        ),
+        'grey': (
+                'slate': $color--slate-grey
+        ),
+        'white': (
+                'default': $color--white
+        ),
+        'black': (
+                'default': $color--black
+        )
+);

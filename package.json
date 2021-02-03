@@ -1,0 +1,66 @@
+{
+  "name": "healthcar",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint \"./**/*.js\"",
+    "lint:fix": "eslint --fix \"./**/*.js\"",
+    "stylelint": "stylelint --syntax scss \"./**/*.scss\"",
+    "stylelint:fix": "stylelint --fix --syntax scss \"./**/*.scss\"",
+    "scss-lint:fix": "sass-lint-auto-fix -c ./.sass-auto-fix.yml --config-sass-lint ./.scss-lint.yml",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "prettier": "prettier --write \"./**/*.scss\" \"./**/*.js\""
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "next": "10.0.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "sass": "^1.32.6",
+    "sass-mq": "^5.0.1",
+    "svgo": "^1.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "react-svg-loader": "^3.0.3",
+    "sass-lint-auto-fix": "^0.21.2",
+    "stylelint": "^13.9.0",
+    "stylelint-at-rule-no-children": "^0.3.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-high-performance-animation": "^1.5.2",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0"
+  },
+  "autoprefixer": {
+    "grid": "autoplace",
+    "browsers": [
+      "> 1%"
+    ]
+  },
+  "lint-staged": {
+    "*.scss": [
+      "sass-lint-auto-fix -c ./.sass-auto-fix.yml --config-sass-lint ./.scss-lint.yml",
+      "stylelint --fix --syntax scss --quiet",
+      "prettier --write"
+    ],
+    "*.svg": "svgo --config ./svgo.config.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.c-btn {
+    @include basic-transition(
+        (transform, color, border-color, background-color)
+    );
+
+    @include on-event {
+        color: $color--black;
+        border-color: currentColor;
+    }
+
+    @include mq($from: desktop) {
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+
+    display: inline-block;
+    padding: 1em 1.5em 1em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: $color--black;
+    border: 1px solid $color--black;
+    cursor: pointer;
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    & + & {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.c-btn--block {
+    display: block;
+    width: 100%;
+}
+
+.c-btn--lg {
+    @include mq($from: desktop) {
+        font-size: 13px;
+    }
+    padding-top: 20px;
+    padding-bottom: 19px;
+}
+
+.c-btn--primary {
+    @include on-event {
+        border-color: $color--black;
+        color: $color--white;
+        background-color: $color--black;
+    }
+    border-color: color('primary');
+    color: $color--white;
+    background-color: color('primary');
+}
+
+.c-btn--secondary {
+    @include on-event {
+        border-color: $color--black;
+        color: $color--black;
+    }
+    border-color: color('secondary');
+    color: color('secondary');
+}
